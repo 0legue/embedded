@@ -1,21 +1,14 @@
-#include "header.h"
-/*  #include <WiFi.h>
-  #include <WiFiClient.h>
-  #include <WebServer.h>
-  WebServer server(80);
-#else
-  #include <ESP8266WiFi.h>
-  #include <WiFiClient.h>
-  #include <ESP8266WebServer.h>
-  ESP8266WebServer server(80);
-#endif
-const char* ssid     = "dyrdom";
+#include "main.h"
+
+WebServer server(80);
+
+const char* ssid = "dyrdom";
 const char* password = "0990371234";
 
 char htmlResponse[3000];
 int ir = 13;
 int led = 14;
-*/
+
 void handleRoot() 
 {
   snprintf ( htmlResponse, 3000,
@@ -29,7 +22,7 @@ void handleRoot()
       <h1>LED</h1>\
       <div>\
       <button id=\"led_button_on\">Turn on LED</button><button id=\"led_button_off\">Turn off LED</button>\
-      </div>\   
+      </div>\  
       <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>\    
       <script>\
         $('#led_button_off').click(function(e){\
@@ -67,7 +60,6 @@ void handleSave()
     }  
   }  
 }
-int myFunction(int, int);
 
 void setup() 
 {
@@ -116,8 +108,3 @@ void loop()
       }
       delay(100);
 }
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}         
