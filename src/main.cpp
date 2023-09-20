@@ -1,5 +1,5 @@
-#ifdef ESP32
-  #include <WiFi.h>
+#include "header.h"
+/*  #include <WiFi.h>
   #include <WiFiClient.h>
   #include <WebServer.h>
   WebServer server(80);
@@ -15,7 +15,7 @@ const char* password = "0990371234";
 char htmlResponse[3000];
 int ir = 13;
 int led = 14;
-
+*/
 void handleRoot() 
 {
   snprintf ( htmlResponse, 3000,
